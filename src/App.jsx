@@ -6,7 +6,7 @@ import React, { useState,useEffect } from "react";
 const App = () => {
   const [num, setnum] = useState(0);
   const [num1, setnum1] = useState(0);
-  
+
   //Use Effect Hook!
   //1-we use UseEffect hook when we want to show something after render.
 
@@ -26,6 +26,7 @@ const App = () => {
   // const mynum1=()=>{
   //     setnum1(num1+1);
   // }
+
   return (
     <>
       {/* <FirstName.Provider value={"Ahsan"}>
