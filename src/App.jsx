@@ -1,47 +1,87 @@
 import React, { useState,useEffect } from "react";
+import axios from "axios";
 // import ComA from "./CompA";
 // const FirstName = createContext();
 // const LastName = createContext();
 
 const App = () => {
-  const [num, setnum] = useState(0);
-  const [num1, setnum1] = useState(0);
+//   const [num, setnum] = useState(0);
+//   const [num1, setnum1] = useState(0);
 
-  //Use Effect Hook!
-  //1-we use UseEffect hook when we want to show something after render.
+//   //Use Effect Hook!
+//   //1-we use UseEffect hook when we want to show something after render.
 
-  //2-When we use empty array [],that means you want to show this only one time when the page is loaded at first.
+//   //2-When we use empty array [],that means you want to show this only one time when the page is loaded at first.
 
-  //3-When we write something in that array that it means that we want to run useEffct on that specific thing only.
+//   //3-When we write something in that array that it means that we want to run useEffct on that specific thing only.
 
-  useEffect(()=>{
-    // alert("i am clicked");
-    document.title=`You Clicked me ${num} times`
-  },[num]);
+//   useEffect(()=>{
+//     // alert("i am clicked");
+//     document.title=`You Clicked me ${num} times`
+//   },[num]);
 
-  const mynum=()=>{
-      setnum(num+1);
+//   const mynum=()=>{
+//       setnum(num+1);
+//   }
+
+//   // const mynum1=()=>{
+//   //     setnum1(num1+1);
+//   // }
+
+//   return (
+//     <>
+//       {/* <FirstName.Provider value={"Ahsan"}>
+//         <LastName.Provider value={"Omerjee"}>
+//           <ComA />
+//         </LastName.Provider>
+//       </FirstName.Provider> */}
+
+
+//       <button onClick={mynum}>Click me {num}</button>
+//       {/* <button onClick={mynum1}>Click me {num1}</button> */}
+
+//     </>
+//   );
+// };
+
+useEffect(()=>{
+  // alert('hi');
+  async function getdata(){
+    const res=await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`);
+    console.log(res.data.name);
+    console.log(res.data.moves);
+    setname1(res.data.name);
+    setmove(res.data.moves.length);
+    // setmove(res.data.moves[0].move.name);
+
   }
-
-  // const mynum1=()=>{
-  //     setnum1(num1+1);
-  // }
-
-  return (
-    <>
-      {/* <FirstName.Provider value={"Ahsan"}>
-        <LastName.Provider value={"Omerjee"}>
-          <ComA />
-        </LastName.Provider>
-      </FirstName.Provider> */}
+  getdata();
+})
+const[num,setnum]=useState();
+const[name1,setname1]=useState();
+const[move,setmove]=useState();
 
 
-      <button onClick={mynum}>Click me {num}</button>
-      {/* <button onClick={mynum1}>Click me {num1}</button> */}
 
-    </>
-  );
-};
+return(
+<>
+<h1>You chose <span style={{color:"red"}}> {num} </span>value</h1>
+<h1>My name is  <span style={{color:"red"}}>{name1}</span></h1>
+<h1>I have  <span style={{color:"red"}}>{move}</span> moves</h1>
+
+<select value={num} onChange={(event)=>{
+      setnum(event.target.value)
+}}>
+  <option value="1">1</option>
+  <option value="25">25</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="6">6</option>
+</select>
+</>
+)
+}
+
 
 export default App;
 // export { FirstName, LastName };
