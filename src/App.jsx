@@ -7,6 +7,7 @@ import { Routes,Route} from "react-router-dom";
 import About from "./About";
 import Contact from "./Contact";
 import Error from "./Error";
+import Navbar from "./Navbar";
 
 const App = () => {
 //   const [num, setnum] = useState(0);
@@ -92,8 +93,9 @@ return(
   <>
 {/* if only '/',it means root pr jana hai! */}
 
+<Navbar/>
 <Routes>
-  <Route exact path="/" element={<About/>}  />
+  <Route path="/" element={<About/>}  />
   <Route path="/contact" element={<Contact/>} />
   {/* if we want to show user a error when a user writes a path that doesnot exits so we give '*' in path in route tag */}
   <Route path="*" element={<Error/>} />
