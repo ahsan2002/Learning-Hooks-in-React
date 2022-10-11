@@ -9,10 +9,15 @@ const User=()=>{
     const history=useNavigate();
     console.log(history);
 
+    const mypg=()=>{
+        history('/contact')
+    }
+
     return(
     <>
     <h1>I am a user {name} {myname} page</h1>
     <h3>your current location is {location.pathname}</h3>
+    <button onClick={mypg}>go to contact page</button>
     {location.pathname === `/user/ahsan/omerjee` ? <button>click</button> : null}
     </>
     )

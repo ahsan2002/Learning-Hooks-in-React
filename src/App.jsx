@@ -98,6 +98,7 @@ return(
 <Routes>
   <Route path="/" element={<About/>}/>
   <Route path="/contact" element={<Contact/>} />
+  <Route path="/user" element={<User/>} />
   <Route path="/user/:name/:myname" element={<User/>} />
   {/* if we want to show user a error when a user writes a path that doesnot exits so we give '*' in path in route tag */}
   <Route path="*" element={<Error/>} />

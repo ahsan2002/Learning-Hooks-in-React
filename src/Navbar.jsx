@@ -7,7 +7,7 @@ const Navbar=()=>{
         <>
         <NavLink to='/'>About us</NavLink>
         <NavLink to='/contact'>Contact us</NavLink>
-        <NavLink to='/user'>User Section</NavLink>
+        <NavLink to='/user/'>User Section</NavLink>
         <br />
         {/* <a href="/">About Us</a>
         <a href="/contact">Contact Us</a> */}
