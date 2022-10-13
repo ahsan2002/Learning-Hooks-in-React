@@ -68,8 +68,6 @@ const App = () => {
 // const[name1,setname1]=useState();
 // const[move,setmove]=useState();
 
-
-
 // return(
 // <>
 // <h1>You chose <span style={{color:"red"}}> {num} </span>value</h1>
